@@ -60,19 +60,19 @@ The system also checks domain trust and some security rules. These results are c
 
 When a URL has a medium danger score, the system shows a warning page. The user can return or continue to the website.
 
-![Warning Page](screenshots/warning test for github.png)
+![Warning Page](screenshots/warning%20test%20for%20github.png)
 
 ### Dangerous URL Blocked
 
 When a URL has a high danger score, the system blocks the website.
 
-![Blocked Page](screenshots/blocked-page.png)
+![Dangerous URL Blocked](screenshots/danger%20test%20for%20github.png)
 
 ### Safe URL
 
 Safe URLs can continue normally without showing a warning or blocked page.
 
-![Safe URL Test](screenshots/safe-result.png)
+![Safe URL Test](screenshots/safe%20test%20for%20github.png)
 
 ## Machine Learning Model
 
