@@ -54,6 +54,26 @@ The backend extracts 20 features from the URL. The XGBoost model then calculates
 
 The system also checks domain trust and some security rules. These results are combined to calculate the final danger score.
 
+## System Screenshots
+
+### Warning Page
+
+When a URL has a medium danger score, the system shows a warning page. The user can return or continue to the website.
+
+![Warning Page](screenshots/warning test for github.png)
+
+### Dangerous URL Blocked
+
+When a URL has a high danger score, the system blocks the website.
+
+![Blocked Page](screenshots/blocked-page.png)
+
+### Safe URL
+
+Safe URLs can continue normally without showing a warning or blocked page.
+
+![Safe URL Test](screenshots/safe-result.png)
+
 ## Machine Learning Model
 
 I used XGBoost for phishing URL detection.
