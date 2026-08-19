@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AI Phishing Shield",
+  "version": "1.0",
+
+  "background": {
+    "scripts": ["background1.js"]
+  },
+
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:5000/*"
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.js",
+        "warning.html",
+        "warning.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

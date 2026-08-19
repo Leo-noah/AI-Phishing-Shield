@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREAT BLOCKED - AI Phishing Shield</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --card-border: #331013;
+            --danger-red: #d9232a;
+            --text-main: #ffffff;
+            --text-muted: #9e9e9e;
+            --box-bg: #161616;
+            --box-border: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .block-card {
+            background-color: var(--card-bg);
+            max-width: 580px;
+            width: 100%;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Shield Icon Header */
+        .icon-container {
+            width: 64px;
+            height: 64px;
+            background-color: var(--danger-red);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            position: relative;
+            clip-path: polygon(50% 0%, 100% 20%, 100% 75%, 50% 100%, 0% 75%, 0% 20%);
+        }
+
+        .icon-container i {
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .status-tag {
+            color: var(--danger-red);
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        p.subtitle {
+            color: #c2c2c2;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            padding: 0 10px;
+        }
+
+        /* URL Display Box */
+        .url-box {
+            background-color: var(--box-bg);
+            border: 1px solid var(--box-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            text-align: left;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .url-box i {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .url-content {
+            flex-grow: 1;
+        }
+
+        .url-label {
+            color: #888888;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .url-display {
+            font-family: monospace;
+            font-size: 13.5px;
+            word-break: break-all;
+            color: var(--danger-red);
+        }
+
+        /* Threat Info Box */
+        .awareness-box {
+            background-color: var(--box-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px 24px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .awareness-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 14px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .awareness-title i {
+            color: var(--danger-red);
+            font-size: 16px;
+        }
+
+        .awareness-box ul {
+            list-style-type: none;
+            padding-left: 12px;
+        }
+
+        .awareness-box li {
+            font-size: 13.5px;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .awareness-box li::before {
+            content: "•";
+            color: var(--danger-red);
+            font-weight: bold;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+
+        .awareness-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Disclaimer Section */
+        .disclaimer-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-align: left;
+            margin-bottom: 24px;
+            padding: 0 4px;
+        }
+
+        .disclaimer-box i {
+            color: #777777;
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        .disclaimer-text {
+            color: #888888;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Action Button */
+        .btn-safe {
+            width: 100%;
+            background-color: var(--danger-red);
+            color: #ffffff;
+            border: none;
+            padding: 14px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-safe:hover {
+            background-color: #b51c22;
+        }
+    </style>
+</head>
+<body>
+
+<div class="block-card">
+    <!-- Icon -->
+    <div class="icon-container">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    
+    <!-- Title -->
+    <h1>THREAT BLOCKED</h1>
+    <div class="status-tag">This link is not safe</div>
+    
+    <!-- Subtitle -->
+    <p class="subtitle">Our AI security model flagged and blocked this link to prevent credential harvesting and session hijacking.</p>
+    
+    <!-- URL Display Box -->
+    <div class="url-box">
+        <i class="fa-solid fa-link"></i>
+        <div class="url-content">
+            <span class="url-label">Attempted Destination:</span>
+            <div class="url-display" id="blockedUrl">http://malicious-site-login.com/fake</div>
+        </div>
+    </div>
+
+    <!-- Awareness Box -->
+    <div class="awareness-box">
+        <div class="awareness-title">
+            <i class="fa-solid fa-circle-info"></i> Why was this blocked?
+        </div>
+        <ul>
+            <li>This URL uses suspicious patterns commonly seen in phishing attacks.</li>
+            <li>It may be trying to steal your login credentials or personal data.</li>
+            <li>This domain does not match the legitimate website you intended to visit.</li>
+        </ul>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-box">
+        <i class="fa-regular fa-shield"></i>
+        <div class="disclaimer-text">
+            If you believe this is a mistake, do not proceed. Instead, visit the official website directly.
+        </div>
+    </div>
+
+    <!-- Button -->
+    <button class="btn-safe" id="closeTabBtn">
+        <i class="fa-solid fa-arrow-left"></i> GO BACK SAFELY
+    </button>
+</div>
+
+<!-- Local Bootstrap JS Bundle -->
+<script src="bootstrap-5.3.8-dist/css/bootstrap.min.css"></script>
+<!-- Logic script -->
+<script src="blocked.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURITY WARNING - Suspicious URL</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --card-border: #222222;
+            --amber-bright: #f1a81d;
+            --amber-bg: #e5a01b;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --box-bg: #161616;
+            --box-border: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .warning-card {
+            background-color: var(--card-bg);
+            max-width: 580px;
+            width: 100%;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Triangle Warning Icon */
+        .icon-warning {
+            font-size: 52px;
+            color: var(--amber-bright);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        /* Danger Score Badge */
+        .score-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--amber-bg);
+            color: #000000;
+            padding: 6px 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        p.subtitle {
+            color: #c2c2c2;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            padding: 0 10px;
+        }
+
+        /* URL Display Box */
+        .url-box {
+            background-color: var(--box-bg);
+            border: 1px solid var(--box-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            text-align: left;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .url-box i {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .url-content {
+            flex-grow: 1;
+        }
+
+        .url-label {
+            color: #888888;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .url-display {
+            font-family: monospace;
+            font-size: 13.5px;
+            word-break: break-all;
+            color: var(--amber-bright);
+        }
+
+        /* Awareness / Info Box */
+        .awareness-box {
+            background-color: var(--box-bg);
+            border: 1px solid var(--box-border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .awareness-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 14.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .awareness-title i {
+            color: var(--amber-bright);
+            font-size: 18px;
+        }
+
+        .awareness-box p {
+            font-size: 13px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 0;
+            padding-left: 28px;
+        }
+
+        /* Action Buttons Grid */
+        .action-buttons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Left Outline Button */
+        .btn-back {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #333333;
+        }
+
+        .btn-back:hover {
+            border-color: #555555;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Right Solid Amber Button */
+        .btn-proceed {
+            background-color: var(--amber-bg);
+            color: #000000;
+            border: none;
+        }
+
+        .btn-proceed:hover {
+            background-color: #cb8d15;
+        }
+    </style>
+</head>
+<body>
+
+<div class="warning-card">
+    <!-- Icon -->
+    <div class="icon-warning">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    
+    <!-- Title -->
+    <h1>SUSPICIOUS LINK DETECTED</h1>
+    
+    <!-- Danger Score Badge -->
+    <div class="score-badge" id="dangerScore">
+        <i class="fa-solid fa-shield"></i> DANGER SCORE: 68%
+    </div>
+    
+    <!-- Subtitle -->
+    <p class="subtitle">Our AI heuristic analyzer flagged this destination URL as potentially risky. Proceed with strict caution.</p>
+    
+    <!-- URL Display Box -->
+    <div class="url-box">
+        <i class="fa-solid fa-link"></i>
+        <div class="url-content">
+            <span class="url-label">FLAGGED DESTINATION:</span>
+            <div class="url-display" id="warningUrl">https://suspicious-site-example.com</div>
+        </div>
+    </div>
+
+    <!-- Awareness Box -->
+    <div class="awareness-box">
+        <div class="awareness-title">
+            <i class="fa-solid fa-circle-info"></i> Stay Safe: Check Before You Trust
+        </div>
+        <p>Attackers frequently deploy spoofed links across web apps or chat interfaces (like Telegram Web) to harvest login tokens and cookies. Always inspect domain titles carefully before inputting credentials.</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="btn btn-back" id="backBtn">
+            <i class="fa-solid fa-arrow-left"></i> GO BACK SAFELY
+        </button>
+        <button class="btn btn-proceed" id="proceedBtn">
+            <i class="fa-solid fa-triangle-exclamation"></i> PROCEED ANYWAY
+        </button>
+    </div>
+</div>
+
+<!-- Local Bootstrap JS Bundle -->
+<!-- Correct path if using Bootstrap JS, or remove if not needed -->
+<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+<!-- Logic script -->
+<script src="warning.js"></script>
+
+</body>
+</html>
