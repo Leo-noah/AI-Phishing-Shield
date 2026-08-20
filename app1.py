@@ -344,14 +344,14 @@ try:
     )
 
     print(
-        f"✅ Loaded Whitelist Domain Database "
+        f"Loaded Whitelist Domain Database "
         f"({len(TOP_1M_DOMAINS):,} domains)"
     )
 
 except Exception as error:
 
     print(
-        f"⚠️ Whitelist file error: {error}"
+        f"Whitelist file error: {error}"
     )
 
     TOP_1M_DOMAINS = (
@@ -374,7 +374,7 @@ try:
     )
 
     print(
-        "✅ Model bundle loaded successfully!"
+        "Model bundle loaded successfully!"
     )
 
     # ------------------------------------------------------------
@@ -399,7 +399,7 @@ try:
         model = saved_bundle["model"]
 
         print(
-            "✅ XGBoost classifier extracted from 'model' key"
+            "XGBoost classifier extracted from 'model' key"
         )
 
         # Use saved feature order if available
@@ -414,7 +414,7 @@ try:
                 )
 
                 print(
-                    f"✅ Loaded saved feature list: "
+                    f"Loaded saved feature list: "
                     f"{len(FEATURE_NAMES)} features"
                 )
 
@@ -448,7 +448,7 @@ try:
         model = saved_bundle
 
         print(
-            "✅ Direct classifier loaded."
+            "Direct classifier loaded."
         )
 
 
@@ -470,7 +470,7 @@ try:
 except Exception as error:
 
     print(
-        "❌ Model loading error:",
+        "Model loading error:",
         error
     )
 
@@ -1702,7 +1702,7 @@ def predict_url():
         print("=" * 70)
 
         print(
-            "❌ PREDICTION ERROR"
+            "PREDICTION ERROR"
         )
 
         print(
